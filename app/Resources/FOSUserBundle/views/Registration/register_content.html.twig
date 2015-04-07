@@ -1,0 +1,14 @@
+{% form_theme form 'AppBundle:Form:bootstrap_3_layout.html.twig' %}
+
+    <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+    {{ form_widget(form) }}
+    <div>
+        <input style="margin-left: 90px;margin-top: 15px" type="submit" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" />
+    </div>
+    <div>
+        <a style="margin-left: 110px;margin-top: 15px;display: block" href ='/login'> {{ 'registration.back_to_login'|trans({}, 'FOSUserBundle') }}</a>
+    </div>
+    </form>
+
+
+

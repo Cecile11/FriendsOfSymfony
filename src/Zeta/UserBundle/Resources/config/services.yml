@@ -1,0 +1,15 @@
+services:
+#    user.example:
+#        class: Zeta\UserBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+    zeta_user.registration.form.type:
+        class: Zeta\UserBundle\Form\Type\RegistrationFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: zeta_user_registration }
+    zeta_user.profile.form.type:
+        class: Zeta\UserBundle\Form\Type\ProfileFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: zeta_user_profile }

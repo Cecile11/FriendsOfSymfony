@@ -1,0 +1,20 @@
+Zeta\UserBundle\Entity\User:
+    type: entity
+    table: fos_user
+    id:
+            id:
+                    type: integer
+                    generator: {strategy: AUTO}
+    fields:
+            firstName:
+                    column: firstname
+                    type: string(100)
+                    nullable: false
+            lastName:
+                    column: lastname
+                    type: string(100)
+                    nullable: false
+            gender:
+                    column: gender
+                    type: string(6)
+                    nullable: false

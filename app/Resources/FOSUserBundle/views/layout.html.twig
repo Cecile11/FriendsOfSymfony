@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="{{ _charset }}" />
+        <meta name="robots" content="noindex,nofollow" />
+        <title>Friends</title>
+        <link href="{{ asset('bundles/user/css/bootstrap.css', absolute=true) }}" rel="stylesheet" />
+        <link href="{{ asset('bundles/user/css/friends.css') }}" rel="stylesheet"/>    
+        <link rel="icon" sizes="16x16" href="{{ asset('favicon.ico') }}" />
+
+        {% block head %}{% endblock %}
+    </head>
+
+    <body background = "{{ asset('bundles/user/images/blue.jpg') }}" >   
+        <div id="motto">
+            <img src= "{{asset('bundles/user/images/friends.png', absolute=true)}}">
+            <br>
+            <center> <b> Gossips at CSE!!! </b> </center>
+        </div>
+
+            <div class="content" style="width: 360px">
+            <div style="padding: 30px;">
+                {% block body %}
+                    {% block fos_user_content %}{% endblock %}
+                {% endblock %}
+            </div>
+            
+        </div>
+    </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+

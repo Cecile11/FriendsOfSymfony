@@ -1,0 +1,11 @@
+timeline_post:
+    resource: "@TimelineBundle/Resources/config/routing/post.php"
+    prefix:   /post
+
+timeline_homepage:
+    path:     /timeline
+    defaults: { _controller: TimelineBundle:Post:index }
+    
+timeline_post:
+    path:     /post
+    defaults: { _controller: TimelineBundle:Post:index }

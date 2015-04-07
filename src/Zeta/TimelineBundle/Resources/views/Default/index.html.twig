@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="{{ _charset }}" />
+        <meta name="robots" content="noindex,nofollow" />
+        <title>Friends Timeline</title>
+        {#        <link href="{{ asset('bundles/user/css/bootstrap.css', absolute=true) }}" rel="stylesheet" />#}
+        {#        <link href="{{ asset('bundles/user/css/timeline.css') }}" rel="stylesheet"/>    #}
+        {#        <link href="{{ asset('bundles/user/css/friends.css') }}" rel="stylesheet"/>    #}
+        {#        <link rel="icon" sizes="16x16" href="{{ asset('favicon.ico') }}" />#}
+        <link href="{{ asset('bundles/user/css/bootstrap.css', absolute=true) }}" rel="stylesheet" />
+          
+        <link href="{{ asset('bundles/timeline/css/bootstrap.min.css') }}" rel="stylesheet" />
+        <link href="{{ asset('bundles/timeline/css/timeline.css') }}" rel="stylesheet"/>    
+        <link href="{{ asset('bundles/timeline/css/friends.css') }}" rel="stylesheet"/>    
+        <link href="{{ asset('bundles/timeline/css/profile.css') }}" rel="stylesheet"/>    
+        <link rel="icon" sizes="16x16" href="{{ asset('favicon.ico') }}" />
+
+        <script src="{{ asset('bundles/timeline/js/bootstrap.min.js') }}"></script>
+
+    {% block head %}{% endblock %}
+</head>
+
+<body style="background-color: #99C2D6" >  
+{#<body background = "{{ asset('bundles/user/images/blue.jpg') }}" >  #} 
+    <div id="motto">
+        <img src= "{{asset('bundles/user/images/friends.png', absolute=true)}}">
+        <br>
+        <center> <b> Gossips at CSE!!! </b> </center>
+    </div>
+
+
+
+    <div class="content" style="width: 1000px; background-color: #EBF3F7">
+        <div class="links">
+            <table border='0' style=" width: 1000px; margin-top: 15px; margin-right: 5px; background-color: #CCCCFF">
+                <tr>
+                    <td align ="center">
+                        <a href="/timeline"><b>TIMELINE</b></a>
+                    </td>
+                    <td align ="center">
+                        <a href="/post/{{ app.user.id }}/myposts"><b>MY POSTS</b></a>
+                    </td>
+                    <td align ="center">
+                        <a href="/profile"><b>ACCOUNT</b></a>
+                    </td>
+                    <td align ="center">
+                        <a href="/logout"><b>LOGOUT</b></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+
+        <div style="padding:  30px; padding-bottom: 0px; color: #0077b3; font-size: 20px; font-weight: bold">
+            {% block user %}                 
+                <center>Hello {{ app.user.username }}, Welcome to CSE Friends Gossips page!</center>
+            {% endblock %}
+        </div>
+
+        <div style="padding: 30px; padding-top: 15px; padding-bottom: 5px;" >
+            {% block post %}
+            {% endblock %}
+        </div>
+
+        <div style="padding:  30px; padding-top: 5px; padding-bottom: 5px; color: #0077b3; font-size: 14px; font-weight: bold">
+
+            {% block body %}
+            {% block fos_user_content %}{% endblock %}  
+        {% endblock %}
+    </div>
+
+</div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

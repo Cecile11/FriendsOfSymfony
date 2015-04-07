@@ -1,0 +1,72 @@
+{% extends "TimelineBundle:Default:index.html.twig" %}
+
+{% block body %}
+   
+    <div class="container" style = "width: 940px; height: 600px;">
+        
+        <div class="row"  style ="height: 100px;">
+            <div class="col-sm-4 col-md-4 user-details">
+               
+                <div class="user-image" style="width: 940px" align="right">
+                    {% if app.user.gender == 'female' %}
+                        <img src="{{ asset('bundles/timeline/images/female.jpg') }}" alt="Male" title="Male" class="img-circle">
+                    {% else %}
+                        <img src="{{ asset('bundles/timeline/images/male.jpg') }}" alt="Male" title="Male" class="img-circle">
+                    {% endif %}
+
+                </div>
+                <div class="user-info-block" style="width: 940px" align="center">
+                    <div class="user-heading" style ="background-color: #002a80; width: 940px" align="center">
+                        <h3 style=" color: #fff; font-family: Monotype Corsiva; font-size: 35px; font-weight: bold; height: 60px; height: 53px; border: 2px solid; border-radius: 2px;"><i>
+                            {% if app.user.firstName == '' %}
+                                Anonymous
+                            {% else %}
+                                {{app.user.firstName}}
+                            {% endif %}
+                            </i></h3>
+                        {#                        <span class="help-block">Chandigarh, IN</span>#}
+                    </div>
+                    <ul class="navigation">
+                        <li {#class="active"#}>
+                            <a data-toggle="tab" href="/profile" align="center">
+                                <span class="glyphicon glyphicon-user"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="/profile/edit"  align="center">
+                                <span class="glyphicon glyphicon-edit"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="/resetting/request"  align="center">
+                                <span class="glyphicon glyphicon-retweet"></span>
+                            </a>
+                        </li>
+                        {# <li>
+                             <a data-toggle="tab" href="/logout">
+                                 <span class="glyphicon glyphicon-log-out"></span>
+                             </a>
+                         </li>#}
+                    </ul>
+                    <div class="user-body" style ="background-color: #FAFAD2; width: 940px; border: 2px solid; border-color: #002a80;">
+                        <div class="tab-content">
+                            <div id="information" class="tab-pane active" align="center">
+                                {% block fos_user_content%}
+                                {% endblock fos_user_content %}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                            
+                            
+    
+            </div>
+        </div>
+    </div> 
+                            
+                            {% endblock body %}
+
+
+
+

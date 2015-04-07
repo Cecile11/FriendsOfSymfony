@@ -1,0 +1,35 @@
+Zeta\TimelineBundle\Entity\Post:
+    type: entity
+    table: post
+    id:
+            id:
+                    type: integer
+                    generator: {strategy: AUTO}
+    fields:
+            date:
+                    column: date
+                    type: date
+                    nullable: false
+            time:
+                    column: time
+                    type: time
+                    nullable: false
+            text:
+                    column: text
+                    type: string(1000)
+                    nullable: false
+            image:
+                    column: image
+                    type: string(1000)
+                    nullable: true
+    properties:
+        file:
+            - File:
+                maxSize: 6000000
+    manyToOne:
+        user:
+            targetEntity: Zeta\UserBundle\Entity\User
+            inversedBy: posts
+            joinColumn:
+                name: user_id
+                referencedColumnName: id

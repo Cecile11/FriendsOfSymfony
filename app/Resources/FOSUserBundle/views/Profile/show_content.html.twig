@@ -1,0 +1,53 @@
+<div class="fos_user_user_show">
+    
+  
+    
+    
+    <table>
+        <tr>
+            <td>
+                <p>{{ 'profile.show.first_name'|trans({}, 'FOSUserBundle') }}:</p>
+            </td>
+            <td>
+                <p>{{ user.firstName }}</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>{{ 'profile.show.last_name'|trans({}, 'FOSUserBundle') }}:</p>
+            </td>
+            <td>
+                <p>{{ user.lastName }}</p>
+            </td>
+             
+        </tr>
+        <tr>
+            <td>
+                <p>{{ 'profile.show.gender'|trans({}, 'FOSUserBundle') }}:</p>
+            </td>
+            <td>
+                <p>{{ user.gender }}</p>
+            </td>
+             
+        </tr>
+        <tr>
+            <td>
+                <p>{{ 'profile.show.username'|trans({}, 'FOSUserBundle') }}:</p>
+            </td>
+            <td>
+                <p>{{ user.username }}</p>
+            </td>
+             
+        </tr>
+        <tr>
+            <td>
+                <p>{{ 'profile.show.email'|trans({}, 'FOSUserBundle') }}:</p>
+            </td>
+            <td>
+                <p>{{ user.email }}</p>
+            </td>
+             
+        </tr>
+    </table>
+    
+</div>

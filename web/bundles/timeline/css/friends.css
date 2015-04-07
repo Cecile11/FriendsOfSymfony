@@ -1,0 +1,22 @@
+
+image{
+    float:left;
+    width:100px;   
+}
+
+#motto{
+    margin:0 auto;
+    width:400px;
+    font-family: Times New Roman;
+    font-size: 30px;
+    color:orangered;
+}
+
+.content{
+    margin-left: auto ;
+    margin-right: auto ;
+    margin-top: 30px;
+    height:auto;   
+   
+}
+

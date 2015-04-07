@@ -1,0 +1,5 @@
+CREATE TABLE grade_point_average (grade VARCHAR(3), value FLOAT, PRIMARY KEY (grade));
+
+INSERT INTO grade_point_average VALUES ('A+', '4.2'), ('A', '4.0'),('A-', '3.7'),('B+', '3.3'),('B', '3.0'),('B-', '2.7'),('C+', '2.3'),('C', '2.0'),('C-', '1.5'),('D','1.0'),('F','0.0'),('I','0.0');
+
+SELECT name, TRUNCATE(((SUM(credits*value)/SUM(credits))),4) AS GPA FROM student NATURAL LEFT JOIN (takes NATURAL JOIN grade_point_average NATURAL JOIN course) GROUP BY ID;

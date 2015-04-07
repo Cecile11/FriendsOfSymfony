@@ -1,0 +1,10 @@
+{% form_theme form 'AppBundle:Form:bootstrap_3_layout.html.twig' %}
+
+
+<form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit">
+    {{ form_widget(form) }}
+    <div>
+{#        <input style="margin-left: 120px;margin-top: 15px" type="submit" value="{{ 'profile.edit.submit'|trans({}, 'FOSUserBundle') }}" />#}
+        <button style="margin-left: 120px;margin-top: 15px" type="submit" class="btn btn-primary">{{ 'profile.edit.submit'|trans({}, 'FOSUserBundle') }}</button>
+    </div>
+</form>
